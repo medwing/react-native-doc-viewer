@@ -27,7 +27,22 @@ android {
 }
 
 repositories {
-    mavenCentral()
+    maven {
+        // Android JSC is installed from npm
+        url("$rootDir/../node_modules/jsc-android/dist")
+    }
+    maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url "$rootDir/../node_modules/react-native/android"
+    }
+    maven { url 'https://jitpack.io' }
+    jcenter {
+        url "http://jcenter.bintray.com/"
+    }
+    mavenLocal()
+
+    google()
+    jcenter()
 }
 
 dependencies {

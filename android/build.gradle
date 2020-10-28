@@ -28,6 +28,12 @@ android {
 
 repositories {
     mavenCentral()
+    mavenLocal() {
+        metadataSources {
+            mavenPom()
+            artifact()
+        }
+    }
 }
 
 dependencies {
